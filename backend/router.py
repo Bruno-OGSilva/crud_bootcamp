@@ -35,7 +35,7 @@ def create_product_route(product: ProductCreate, db: Session = Depends(get_db)):
 
 # criar minha rota de deletar um item
 @router.delete("/products/{product_id}", response_model=ProductResponse)
-def delete_product(product_id: int, db: Session = Depends(get_db)):
+def delete_product_route(product_id: int, db: Session = Depends(get_db)):
     product_db = delete_product(product_id=product_id, db=db)
     if product_db is None:
         raise HTTPException(status_code=404, detail="voce ta querendo DELETAR um produto que nao existe")

@@ -26,7 +26,7 @@ def create_product(db: Session, product: ProductCreate):
 # delete where id = 1
 def delete_product(db: Session, product_id: int):
     db_product = db.query(ProductModel).filter(ProductModel.id == product_id).first()
-    db.dlete(db_product)
+    db.delete(db_product)
     db.commit()
     return db_product
 

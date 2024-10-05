@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Optional
 
 
-class ProductBase():
+class ProductBase(BaseModel):
     name: str
     description: str
     price: PositiveFloat
@@ -16,7 +16,7 @@ class ProductCreate(ProductBase):
 
 class ProductResponse(ProductBase):
     id: int
-    cretaed_st: datetime
+    created_at: datetime
 
     class Config:
         from_attributes = True
